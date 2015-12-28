@@ -47,6 +47,7 @@ if (Meteor.isClient) {
 		symbolSelections1: function () {
 			return SymbolSelections.find({});
 		},
+		//populate Rock,Paper,Scissor buttons
 		buttonArray: function () {
 			var arr = [{"buttonId":1,"color":"rgb(221,221,221)",name : "rock",displayName : "Rock","disabledAttr":""},
 			{"buttonId":2,"color":"rgb(221,221,221)",name:"paper",displayName:"Paper","disabledAttr":""},
@@ -77,7 +78,8 @@ if (Meteor.isClient) {
 		}
 	});
   
-
+	
+	//Handle Rock,Paper,Scissor buttons events
     Template.buttonForSymbol.events({
     'click button': function (event) {
 		var symbolName = event.target.name;
