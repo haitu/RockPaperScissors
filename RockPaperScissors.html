@@ -1,0 +1,40 @@
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+  <h1>Rock Paper Scissors</h1>
+	{{> loginButtons}}
+	<br/>
+	<br/>	
+
+	<h2>Select symbol</h2>
+	{{#each buttonArray}}
+		{{> buttonForSymbol}}
+	{{/each}}
+
+	
+	<br/><br/>
+	<br/>
+	{{> finalResultTemplate}}
+	<br/>
+	
+	{{> rbs}}
+	
+</body>
+
+<template name="buttonForSymbol">
+	 <button {{disabledAttr}} type="button" id="{{name}}" name="{{name}}" style="background-color:{{color}}" >{{displayName}}</button>
+</template>
+
+<template name="finalResultTemplate">
+	<span class="text"><strong>{{finalResult}}</strong></span>
+</template>
+
+<template name="rbs">
+  <h1 id="finalResult"></h1>
+  <button id="reset" name="reset">Reset game</button>
+  <br/>
+</template>
+
+
